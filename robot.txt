@@ -1,72 +1,144 @@
-Sitemap: http://tupagina.com/sitemap.xml 
+#robots de Mora Estudio Creativo
+#es necesario personalizar algunas opciones o puede dar problemas
 
-User-Agent: *
-Allow: /wp-content/uploads/
-Allow: /feed/$
-Disallow: /wp-
-Disallow: /wp-content/
-Disallow: /trackback/
-Disallow: /wp-admin/
-Disallow: /feed/
-Disallow: /?s=
-Disallow: /search
-Disallow: /archives/
-Disallow: /index.php
-Disallow: /*?
-Disallow: /*.php$
-Disallow: /*.js$
-Disallow: /*.inc$
-Disallow: /*.css$
-Disallow: */feed/
-Disallow: */trackback/
+
+# Bloqueo basico para todos los bots y crawlers
+# puede dar problemas por bloqueo de recursos en GWT
+User-agent: *
+Allow: /wp-content/uploads/*
+Allow: /wp-content/*.js
+Allow: /wp-content/*.css
+Allow: /wp-includes/*.js
+Allow: /wp-includes/*.css
+Disallow: /cgi-bin
+Disallow: /wp-content/plugins/ 
+Disallow: /wp-content/themes/ 
+Disallow: /wp-includes/ 
+Disallow: /*/attachment/
+Disallow: /tag/*/page/
+Disallow: /tag/*/feed/
 Disallow: /page/
-Disallow: /tag/
-Disallow: /category/
+Disallow: /comments/
+Disallow: /xmlrpc.php
+Disallow: /?attachment_id*
 
-# No indexar copias de seguridad
-Disallow: /*.sql$
-Disallow: /*.tgz$
-Disallow: /*.gz$
-Disallow: /*.tar$
-Disallow: /*.svn$
+# Bloqueo de las URL dinamicas
+Disallow: /*?
 
-# Reglas para bots conocidos
 
-User-agent: Googlebot
+#Bloqueo de busquedas
+User-agent: *
+Disallow: /?s= 
+Disallow: /search
 
-User-agent: Googlebot-Image
-Disallow: /wp-includes/
-Allow: /wp-content/uploads/
 
-User-agent: Mediapartners-Google*
-Disallow:
+# Bloqueo de trackbacks
+User-agent: *
+Disallow: /trackback
+Disallow: /*trackback
+Disallow: /*trackback*
+Disallow: /*/trackback
 
-User-agent: ia_archiver
-Disallow: /
 
-User-agent: duggmirror
-Disallow: /
+# Bloqueo de feeds para crawlers
+User-agent: *
+Allow: /feed/$ 
+Disallow: /feed/ 
+Disallow: /comments/feed/
+Disallow: /*/feed/$ 
+Disallow: /*/feed/rss/$ 
+Disallow: /*/trackback/$ 
+Disallow: /*/*/feed/$ 
+Disallow: /*/*/feed/rss/$ 
+Disallow: /*/*/trackback/$ 
+Disallow: /*/*/*/feed/$ 
+Disallow: /*/*/*/feed/rss/$ 
+Disallow: /*/*/*/trackback/$
 
+
+# Ralentizamos algunos bots que se suelen volver locos
 User-agent: noxtrumbot
-Crawl-delay: 50
-
+Crawl-delay: 20
 User-agent: msnbot
-Crawl-delay: 30
-
+Crawl-delay: 20
 User-agent: Slurp
-Crawl-delay: 10
+Crawl-delay: 20
 
+
+# Bloqueo de bots y crawlers poco utiles
 User-agent: MSIECrawler
+Disallow: / 
+User-agent: WebCopier 
+Disallow: / 
+User-agent: HTTrack 
+Disallow: / 
+User-agent: Microsoft.URL.Control 
+Disallow: / 
+User-agent: libwww 
+Disallow: / 
+User-agent: Orthogaffe 
+Disallow: / 
+User-agent: UbiCrawler 
+Disallow: / 
+User-agent: DOC 
+Disallow: / 
+User-agent: Zao 
+Disallow: / 
+User-agent: sitecheck.internetseer.com 
+Disallow: / 
+User-agent: Zealbot 
+Disallow: / 
+User-agent: MSIECrawler 
+Disallow: / 
+User-agent: SiteSnagger 
+Disallow: / 
+User-agent: WebStripper 
+Disallow: / 
+User-agent: WebCopier 
+Disallow: / 
+User-agent: Fetch 
+Disallow: / 
+User-agent: Offline Explorer 
+Disallow: / 
+User-agent: Teleport 
+Disallow: / 
+User-agent: TeleportPro 
+Disallow: / 
+User-agent: WebZIP 
+Disallow: / 
+User-agent: linko 
+Disallow: / 
+User-agent: HTTrack 
+Disallow: / 
+User-agent: Microsoft.URL.Control 
+Disallow: / 
+User-agent: Xenu 
+Disallow: / 
+User-agent: larbin 
+Disallow: / 
+User-agent: libwww 
+Disallow: / 
+User-agent: ZyBORG 
+Disallow: / 
+User-agent: Download Ninja 
+Disallow: / 
+User-agent: wget 
+Disallow: / 
+User-agent: grub-client 
+Disallow: / 
+User-agent: k2spider 
+Disallow: / 
+User-agent: NPBot 
+Disallow: / 
+User-agent: WebReaper 
 Disallow: /
 
-User-agent: WebCopier
-Disallow: /
 
-User-agent: HTTrack
-Disallow: /
+# Previene problemas de recursos bloqueados en Google Webmaster Tools
+User-Agent: Googlebot
+Allow: /*.css$
+Allow: /*.js$
 
-User-agent: Microsoft.URL.Control
-Disallow: /
 
-User-agent: libwww
-Disallow: /
+# En condiciones normales este es el sitemap CON YOAST SEO
+Sitemap: https://TUWEB.com/sitemap_index.xml
