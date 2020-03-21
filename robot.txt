@@ -1,15 +1,17 @@
 #robots de Mora Estudio Creativo
-#es necesario personalizar algunas opciones o puede dar problemas
+#es necesario personalizar algunas opciones 
 
 
-# Bloqueo basico para todos los bots y crawlers
-# puede dar problemas por bloqueo de recursos en GWT
+# Bloqueo basico 
+# puede dar problemas por bloqueo de recursos en Google Web Toolkit
 User-agent: *
+# Permisos 
 Allow: /wp-content/uploads/*
 Allow: /wp-content/*.js
 Allow: /wp-content/*.css
 Allow: /wp-includes/*.js
 Allow: /wp-includes/*.css
+# Bloqueos
 Disallow: /cgi-bin
 Disallow: /wp-content/plugins/ 
 Disallow: /wp-content/themes/ 
@@ -22,17 +24,17 @@ Disallow: /comments/
 Disallow: /xmlrpc.php
 Disallow: /?attachment_id*
 
-# Bloqueo de las URL dinamicas
+# URL dinamicas
 Disallow: /*?
 
 
-#Bloqueo de busquedas
+#Busquedas
 User-agent: *
 Disallow: /?s= 
 Disallow: /search
 
 
-# Bloqueo de trackbacks
+# Trackbacks
 User-agent: *
 Disallow: /trackback
 Disallow: /*trackback
@@ -40,7 +42,7 @@ Disallow: /*trackback*
 Disallow: /*/trackback
 
 
-# Bloqueo de feeds para crawlers
+# Feeds para crawlers
 User-agent: *
 Allow: /feed/$ 
 Disallow: /feed/ 
